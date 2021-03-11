@@ -16,8 +16,26 @@ next.click(function () {
 prev.click(function () {
 	prevElement(".nav", "i");
 })
-//#endregion
 
+//#endregion bonus
+for (let i = 0; i < 4; i++) {
+	$($(".nav i")[i]).click(function () {
+		$(`.nav i.active`).removeClass("active");
+		$(this).addClass("active");
+
+		$($(".images img")).removeClass("active")
+		$($(".images img")[i]).addClass("active")
+	})
+	$($(".images img")[i]).click(function () {
+		console.log("hello");
+		$(`.nav i.active`).removeClass("active");
+		$(this).addClass("active");
+	})
+	
+}
+//#region 
+
+//#endregion
 function nextElement(container, child) {
 	//inizializzo qua la variabile active 
 	var active = $(`${container} ${child}.active`);
